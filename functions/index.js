@@ -1,6 +1,6 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-const axios = require("axios"); // Import axios for making HTTP requests
+const axios = require("axios"); 
 const taxSlabRates = require("./taxSlabRates");
 
 admin.initializeApp();
@@ -42,7 +42,7 @@ function calculateGST(totalBookingAmount, taxSlab, isInterState) {
   if (isInterState) {
     igstAmount = totalBookingAmount * (taxSlab / 100);
   } else {
-    cgstAmount = totalBookingAmount * (taxSlab / 2 / 100); // Corrected typo and variable name
+    cgstAmount = totalBookingAmount * (taxSlab / 2 / 100); 
     sgstAmount = cgstAmount;
   }
   return {cgstAmount, sgstAmount, igstAmount};

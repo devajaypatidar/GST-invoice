@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.post("/gst/filing", (req, res) => {
   const { name, gstAmount, apiKey } = req.body;
 
-  // Validate API key
+  
   if (apiKey !== "2121212") {
     return res.status(401).json({ error: "Unauthorized" });
   }
@@ -34,7 +34,7 @@ app.post("/gst/filing", (req, res) => {
   return res.json(responseData);
 });
 
-// Start the server
+// Starting the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
